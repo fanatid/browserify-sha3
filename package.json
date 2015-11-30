@@ -15,7 +15,7 @@
     "browserify"
   ],
   "author": "mjbecze <mjbecze@gmail.com>",
-  "license": "GPL-2.0",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/wanderer/browserify-sha3/issues"
   },

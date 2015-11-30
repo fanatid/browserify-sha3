@@ -7,6 +7,7 @@ var hash = function (bitcount) {
 
 hash.prototype.update = function (i) {
   this.content = Buffer.isBuffer(i) ? i : new Buffer(i);
+  return this
 }
 
 hash.prototype.digest = function (encoding) {

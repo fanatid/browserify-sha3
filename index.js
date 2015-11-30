@@ -10,7 +10,12 @@ var hash = function (bitcount) {
 }
 
 hash.prototype.update = function (i) {
-  this.content = Buffer.isBuffer(i) ? i : new Buffer(i);
+  if (Buffer.isBuffer(i))
+    this.content = i
+  else if (typeof i === 'string')
+    this.content = new Buffer(i)
+  else
+    throw new Error('Unsupported argument to update')
   return this
 }
 

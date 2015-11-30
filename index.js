@@ -20,11 +20,13 @@ hash.prototype.update = function (i) {
 }
 
 hash.prototype.digest = function (encoding) {
-  var result = Sha3[this.bitcount](this.content) 
-  if(encoding === 'hex')
+  var result = Sha3[this.bitcount](this.content)
+  if (encoding === 'hex')
     return result
-  else
+  else if (encoding === 'binary' || encoding === undefined)
     return new Buffer(result, 'hex').toString('binary')
+  else
+    throw new Error('Unsupported encoding for digest: ' + encoding)
 }
 
 module.exports = {
